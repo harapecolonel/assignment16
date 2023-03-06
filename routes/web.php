@@ -25,8 +25,8 @@ Route::controller(NewsController::class)->prefix('admin')->group(function(){
 
 
 Route::controller(ProfileController::class)->prefix('admin')->group(function() {
-    Route::get('profile/create', 'add')->middleware('auth');
-    Route::get('profile/edit', 'edit')->middleware('auth');
+    Route::post('profile/create', 'add');
+    Route::get('profile/edit', 'edit');
 });
 
 
@@ -34,6 +34,17 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::controller(NewsController::class)->prefix('admin')->group(function() {
-    Route::get('news/create', 'add')->middleware('auth');
+Route::controller(NewsController::class)->prefix('admin')->name('admin.')->group(function () {
+    Route::get('news/create', 'add')->name('news.add');
+    Route::post('news/create', 'create')->name('news.create');
+});
+
+Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->group(function () {
+    Route::get('profile/create', 'add')->name('profile.add');
+    Route::post('profile/create', 'create')->name('profile.create');
+});
+
+Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->group(function () {
+    Route::get('profile/admin', 'add')->name('profile.add');
+    Route::post('profile/admin', 'update')->name('profile.create');
 });

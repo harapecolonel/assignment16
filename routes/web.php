@@ -42,9 +42,6 @@ Route::controller(NewsController::class)->prefix('admin')->name('admin.')->group
 Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->group(function () {
     Route::get('profile/create', 'add')->name('profile.add');
     Route::post('profile/create', 'create')->name('profile.create');
-});
-
-Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->group(function () {
-    Route::get('profile/admin', 'add')->name('profile.add');
-    Route::post('profile/admin', 'update')->name('profile.create');
+    Route::get('profile/edit', 'edit')->name('profile.edit');
+    Route::post('profile/edit', 'update')->name('profile.update');
 });

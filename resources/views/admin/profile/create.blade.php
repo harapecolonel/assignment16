@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title', 'MYニュース')
+@section('title', 'プロフィールの作成')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>Myニュース</h2>
-                <form action="{{ route('admin.news.create') }}" method="post" enctype="multipart/form-data">
+                <h2>プロフィールの作成</h2>
+                <form action="{{ route('admin.profile.create') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -35,11 +35,11 @@
                     <div class="form-group row">
                         <label class="col-md-2">自己紹介(introduction)</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="introduction" value="{{ old('introduction') }}">
+                            <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}</textarea>
                         </div>
                     </div>
                     @csrf
-                    <input type="submit" class="btn btn-primary" value="更新">
+                    <input type="submit" class="btn btn-primary" value="登録">
                 </form>
             </div>
         </div>

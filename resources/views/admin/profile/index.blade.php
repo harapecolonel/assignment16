@@ -7,7 +7,7 @@
             <h2>プロフィール一覧</h2>
         </div>
         <div class="row">
-                <form action="{{ route('admin.profile.index') }}" method="get"></form>
+        　　<form action="{{ route('admin.profile.index') }}" method="get"></form>
         </div>
         <div class="row">
             <div class="list-news col-md-12 mx-auto">
@@ -22,7 +22,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($posts as $profile)
+                            @foreach($profiles as $profile)
                                 <tr>
                                     <td>{{ Str::limit($profile->name, 100) }}</td>
                                     <td>{{ Str::limit($profile->gender, 100) }}</td>

@@ -18,7 +18,6 @@ class ProfileController extends Controller
     {
         // Validationを行う
         $this->validate($request, Profile::$rules);
-
         $profile = new Profile;
         $form = $request->all();
 
@@ -33,22 +32,22 @@ class ProfileController extends Controller
     
     public function index(Request $request)
     {
-        $cond_title = $request->cond_title;
-        if ($cond_title != '') {
+        $cond_name = $request->cond_name;
+        if ($cond_name != '') {
             // 検索されたら検索結果を取得する
-            $posts = Profile::where('title', $cond_title)->get();
+            $profiles = Profile::where('name', $cond_name)->get();
         } else {
             // それ以外はすべてのprofilrを取得する
-            $posts = Profile::all();
+            $profiles = Profile::all();
         }
-        return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+        return view('admin.profile.index', ['profiles' => $profiles, 'cond_name' => $cond_name]);
     }
 
     public function edit(Request $request)
     {
         // Profile Modelからデータを取得する
         $profile = Profile::find($request->id);
-        if (empty($Profile)) {
+        if (empty($profile)) {
             abort(404);
         }
         return view('admin.profile.edit', ['profile_form' => $profile]);
@@ -62,6 +61,8 @@ class ProfileController extends Controller
         $profile = Profile::find($request->id);
         // 送信されてきたフォームデータを格納する
         $profile_form = $request->all();
+        
+        unset($profile_form['remove']);
         unset($profile_form['_token']);
 
         // 該当するデータを上書きして保存する

@@ -7,21 +7,17 @@
             <div class="row">
                 <div class="headline col-md-10 mx-auto">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="caption mx-auto">
-                                <div class="title p-2">
+                        <div class="col-md-2">
                                     <h1>{{ Str::limit($headline->name, 50) }}</h1>
-                                </div>
-                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <p class="body mx-auto">{{ Str::limit($headline->gender, 70) }}</p>
+                        <div class="col-md-3">
+                            <p class="body mx-auto">{{ Str::limit($headline->gender, 50) }}</p>
                         </div>
-                        <div class="col-md-6">
-                            <p class="body mx-auto">{{ Str::limit($headline->hobby, 70) }}</p>
+                        <div class="col-md-3">
+                            <p class="body mx-auto">{{ Str::limit($headline->hobby, 50) }}</p>
                         </div>
-                        <div class="col-md-6">
-                            <p class="body mx-auto">{{ Str::limit($headline->introduction, 70) }}</p>
+                        <div class="col-md-3">
+                            <p class="body mx-auto">{{ Str::limit($headline->introduction, 50) }}</p>
                         </div>
                     </div>
                 </div>

@@ -167,6 +167,7 @@ return [
 
     'attributes' => [
         'title' => 'タイトル',
+        'contributor' => '投稿者',
         'body' => '本文',
         'name' => '名前',
         'gender' => '性別',

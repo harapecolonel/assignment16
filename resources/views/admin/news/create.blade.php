@@ -21,6 +21,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-2">投稿者名</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="contributor" value="{{ old('contributor') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2">本文</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>

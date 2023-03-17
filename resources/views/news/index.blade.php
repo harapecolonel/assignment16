@@ -17,6 +17,9 @@
                                 <div class="title p-2">
                                     <h1>{{ Str::limit($headline->title, 70) }}</h1>
                                 </div>
+                                <div class="title p-2">
+                                    <h1>{{ Str::limit($headline->name, 70) }}</h1>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -38,6 +41,9 @@
                                 </div>
                                 <div class="title">
                                     {{ Str::limit($post->title, 150) }}
+                                </div>
+                                <div class="name">
+                                    {{ Str::limit($post->contributor, 150) }}
                                 </div>
                                 <div class="body mt-3">
                                     {{ Str::limit($post->body, 1500) }}

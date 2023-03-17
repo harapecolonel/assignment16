@@ -13,6 +13,7 @@ class News extends Model
 
     public static $rules = array(
         'title' => 'required',
+        'contributor' => 'required',
         'body' => 'required',
     );
     

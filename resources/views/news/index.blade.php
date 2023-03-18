@@ -17,8 +17,8 @@
                                 <div class="title p-2">
                                     <h1>{{ Str::limit($headline->title, 70) }}</h1>
                                 </div>
-                                <div class="title p-2">
-                                    <h1>{{ Str::limit($headline->name, 70) }}</h1>
+                                <div class="contributor p-2">
+                                    <h1>{{ Str::limit($headline->contributor, 70) }}</h1>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                                 <div class="title">
                                     {{ Str::limit($post->title, 150) }}
                                 </div>
-                                <div class="name">
+                                <div class="contributor">
                                     {{ Str::limit($post->contributor, 150) }}
                                 </div>
                                 <div class="body mt-3">
